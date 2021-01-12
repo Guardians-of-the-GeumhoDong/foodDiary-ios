@@ -17,6 +17,9 @@ class LoginViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
         vm = LoginViewModel()
         vm?.delegate = self
     
@@ -38,9 +41,9 @@ class LoginViewController: UIViewController {
 extension LoginViewController : LoginProtocol {
     
     func successEvent() {
-        let view = self.storyboard?.instantiateViewController(identifier: "MainViewController")
-        view?.modalPresentationStyle = .fullScreen
-        self.present(view!, animated: false, completion: nil)
+        let view = self.storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+        view.modalPresentationStyle = .fullScreen
+        self.present(view, animated: false, completion: nil)
         
     }
     

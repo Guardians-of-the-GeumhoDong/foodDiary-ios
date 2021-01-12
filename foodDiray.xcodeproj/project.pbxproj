@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2748A6AAA3F9E39256070313 /* Pods_foodDiray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87C27929308062D131F3901 /* Pods_foodDiray.framework */; };
+		8215805025AD8BB6005CB92B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215804F25AD8BB6005CB92B /* MainTableViewCell.swift */; };
 		82365903259C71800008F668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82365902259C71800008F668 /* AppDelegate.swift */; };
 		82365905259C71800008F668 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82365904259C71800008F668 /* SceneDelegate.swift */; };
 		8236590A259C71800008F668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82365908259C71800008F668 /* Main.storyboard */; };
@@ -16,12 +17,13 @@
 		82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658D9B259DAB69006E341D /* LoginViewModel.swift */; };
 		82658D9E259DAB69006E341D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658D9C259DAB69006E341D /* LoginViewController.swift */; };
 		82658DA2259DC6E0006E341D /* NetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658DA1259DC6E0006E341D /* NetworkDTO.swift */; };
-		82992BE225A479CF00185043 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82992BE125A479CF00185043 /* MainViewController.swift */; };
 		82CEB63825A30735000FF524 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CEB63725A30735000FF524 /* LoginModel.swift */; };
+		82F4EE1C25AD8A3400EB1C00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4EE1B25AD8A3400EB1C00 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		783A09E34F913B560884BFD8 /* Pods-foodDiray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodDiray.release.xcconfig"; path = "Target Support Files/Pods-foodDiray/Pods-foodDiray.release.xcconfig"; sourceTree = "<group>"; };
+		8215804F25AD8BB6005CB92B /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		823658FF259C71800008F668 /* foodDiray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodDiray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82365902259C71800008F668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82365904259C71800008F668 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +34,8 @@
 		82658D9B259DAB69006E341D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		82658D9C259DAB69006E341D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		82658DA1259DC6E0006E341D /* NetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDTO.swift; sourceTree = "<group>"; };
-		82992BE125A479CF00185043 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		82CEB63725A30735000FF524 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		82F4EE1B25AD8A3400EB1C00 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C87C27929308062D131F3901 /* Pods_foodDiray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodDiray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1B231654DD29B60A4F450B /* Pods-foodDiray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodDiray.debug.xcconfig"; path = "Target Support Files/Pods-foodDiray/Pods-foodDiray.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,6 +81,7 @@
 		82365901259C71800008F668 /* foodDiray */ = {
 			isa = PBXGroup;
 			children = (
+				82F4EE1125AD89B700EB1C00 /* Main */,
 				82658DA0259DC6CB006E341D /* Network */,
 				82658D9A259DAB69006E341D /* Login */,
 				82658D99259DAB06006E341D /* Storyboard */,
@@ -87,7 +90,6 @@
 				8236590B259C71810008F668 /* Assets.xcassets */,
 				8236590D259C71810008F668 /* LaunchScreen.storyboard */,
 				82365910259C71810008F668 /* Info.plist */,
-				82992BE125A479CF00185043 /* MainViewController.swift */,
 			);
 			path = foodDiray;
 			sourceTree = "<group>";
@@ -116,6 +118,15 @@
 				82658DA1259DC6E0006E341D /* NetworkDTO.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		82F4EE1125AD89B700EB1C00 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				82F4EE1B25AD8A3400EB1C00 /* MainViewController.swift */,
+				8215804F25AD8BB6005CB92B /* MainTableViewCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		85C6FF2F4552CC0ED1CA6B9D /* Pods */ = {
@@ -241,13 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82992BE225A479CF00185043 /* MainViewController.swift in Sources */,
 				82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */,
 				82CEB63825A30735000FF524 /* LoginModel.swift in Sources */,
+				8215805025AD8BB6005CB92B /* MainTableViewCell.swift in Sources */,
 				82365903259C71800008F668 /* AppDelegate.swift in Sources */,
 				82658DA2259DC6E0006E341D /* NetworkDTO.swift in Sources */,
 				82658D9E259DAB69006E341D /* LoginViewController.swift in Sources */,
 				82365905259C71800008F668 /* SceneDelegate.swift in Sources */,
+				82F4EE1C25AD8A3400EB1C00 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

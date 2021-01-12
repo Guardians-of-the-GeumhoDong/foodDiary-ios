@@ -12,5 +12,8 @@ target 'foodDiray' do
 
  # Image
   pod 'Kingfisher'
+  
+  # Auto Layout
+  pod 'SnapKit'
 
 end
