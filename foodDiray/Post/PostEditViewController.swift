@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class PostEditViewController: UIViewController {
 
@@ -38,6 +39,21 @@ class PostEditViewController: UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @objc func unselectPhoto() {
+        
+        photoImage.removeFromSuperview()
+        
+        let image = UIImage(systemName: "plus.rectangle.fill.on.rectangle.fill")
+        photoImage.image = image
+        photoImage.backgroundColor = .darkGray
+        photoImage.snp.makeConstraints { (m) in
+            m.width.equalTo(414)
+            m.height.equalTo(516)
+        }
+        
+        
+    }
 
 }
 
@@ -55,6 +71,19 @@ extension PostEditViewController: UIImagePickerControllerDelegate, UINavigationC
         photoImage.backgroundColor = .white
         photoImage.contentMode = .scaleAspectFill
         photoImage.image = selectImage
+        
+        let deleteButton = UIButton()
+        let deleteImage = UIImage(systemName: "xmark.circle.fill")
+        deleteButton.setImage(deleteImage, for: .normal)
+        photoImage.addSubview(deleteButton)
+        deleteButton.snp.makeConstraints { (m) in
+            m.right.equalTo(photoImage).offset(-20)
+            m.top.equalTo(photoImage).offset(50)
+            m.width.height.equalTo(30)
+        }
+        
+        deleteButton.addTarget(self, action: #selector(unselectPhoto), for: .touchUpInside)
+        
         
           self.dismiss(animated: true)
     }
