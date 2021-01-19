@@ -369,18 +369,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-hI-cVO">
-                                <rect key="frame" x="20" y="592.66666666666663" width="374" height="18.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력해주세요제목을 입력해주세요제목을 입력해주세요제목을 입력해주세요제목을 입력해주세요제목을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dh3-hI-cVO">
+                                <rect key="frame" x="20" y="592.66666666666663" width="374" height="28"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xqy-dA-C2U">
-                                <rect key="frame" x="20" y="667.33333333333337" width="374" height="18.666666666666629"/>
+                                <rect key="frame" x="20" y="676.66666666666663" width="374" height="18.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메모" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Im-gq-7Oz">
-                                <rect key="frame" x="20" y="636.33333333333337" width="30" height="21"/>
+                                <rect key="frame" x="20" y="645.66666666666663" width="30" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -392,11 +393,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeU-xL-f91">
-                                <rect key="frame" x="74" y="538" width="39" height="30"/>
+                                <rect key="frame" x="74" y="537.66666666666663" width="39" height="30"/>
                                 <color key="backgroundColor" systemColor="linkColor"/>
                                 <state key="normal" title="즐거움">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="THo-4w-HH5">
+                                <rect key="frame" x="323" y="537" width="21" height="22"/>
+                                <state key="normal" image="calendar" catalog="system"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="iTl-Mk-Tv7"/>
@@ -404,6 +409,7 @@
                         <constraints>
                             <constraint firstItem="aeU-xL-f91" firstAttribute="leading" secondItem="GM6-BP-owt" secondAttribute="trailing" constant="10" id="0RX-FN-z8c"/>
                             <constraint firstItem="Cuh-vX-u14" firstAttribute="trailing" secondItem="iTl-Mk-Tv7" secondAttribute="trailing" id="50y-Gf-Sa1"/>
+                            <constraint firstItem="pYr-1b-yiM" firstAttribute="leading" secondItem="THo-4w-HH5" secondAttribute="trailing" constant="8" symbolic="YES" id="Lex-om-f1g"/>
                             <constraint firstItem="GM6-BP-owt" firstAttribute="top" secondItem="Cuh-vX-u14" secondAttribute="bottom" constant="20" id="QeR-4T-BbD"/>
                             <constraint firstItem="4Im-gq-7Oz" firstAttribute="top" secondItem="dh3-hI-cVO" secondAttribute="bottom" constant="25" id="UNR-o4-v5X"/>
                             <constraint firstItem="Xqy-dA-C2U" firstAttribute="leading" secondItem="iTl-Mk-Tv7" secondAttribute="leading" constant="20" id="X6v-CZ-2Lw"/>
@@ -416,12 +422,14 @@
                             <constraint firstItem="iTl-Mk-Tv7" firstAttribute="trailing" secondItem="Xqy-dA-C2U" secondAttribute="trailing" constant="20" id="gZa-5J-gp2"/>
                             <constraint firstItem="Cuh-vX-u14" firstAttribute="top" secondItem="AbC-b9-mXK" secondAttribute="top" id="j5T-JV-yWR"/>
                             <constraint firstItem="dh3-hI-cVO" firstAttribute="leading" secondItem="iTl-Mk-Tv7" secondAttribute="leading" constant="20" id="kSh-f1-xrt"/>
+                            <constraint firstItem="THo-4w-HH5" firstAttribute="centerY" secondItem="pYr-1b-yiM" secondAttribute="centerY" id="mVg-aK-wTj"/>
                             <constraint firstItem="Xqy-dA-C2U" firstAttribute="top" secondItem="4Im-gq-7Oz" secondAttribute="bottom" constant="10" id="nJH-WE-Lwi"/>
                             <constraint firstItem="aeU-xL-f91" firstAttribute="centerY" secondItem="GM6-BP-owt" secondAttribute="centerY" id="p3t-nV-OkB"/>
                             <constraint firstItem="Cuh-vX-u14" firstAttribute="leading" secondItem="iTl-Mk-Tv7" secondAttribute="leading" id="tcq-gd-6SD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateLabel" destination="pYr-1b-yiM" id="zMg-Do-qEP"/>
                         <outlet property="photoImage" destination="Cuh-vX-u14" id="fPd-UO-ggy"/>
                     </connections>
                 </viewController>
@@ -432,6 +440,7 @@
     </scenes>
     <resources>
         <image name="20170910011347_photo1_481363df942d" width="750" height="625"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="scribble.variable" catalog="system" width="128" height="118"/>

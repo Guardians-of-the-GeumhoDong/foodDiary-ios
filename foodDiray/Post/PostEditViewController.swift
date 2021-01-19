@@ -11,17 +11,24 @@ import SnapKit
 class PostEditViewController: UIViewController {
 
     @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     
     let picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+      
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showPhotoAlert))
         photoImage.addGestureRecognizer(gesture)
         photoImage.isUserInteractionEnabled = true
         
         picker.delegate = self
+        
+        var formmatter = DateFormatter()
+        formmatter.dateFormat = "yyyy-MM-dd"
+        dateLabel.text = formmatter.string(from: Date())
+        
     }
 
     @objc func showPhotoAlert() {
@@ -41,15 +48,20 @@ class PostEditViewController: UIViewController {
     }
     
     @objc func unselectPhoto() {
-        
-        photoImage.removeFromSuperview()
+
+        photoImage.viewWithTag(99)?.removeFromSuperview()
         
         let image = UIImage(systemName: "plus.rectangle.fill.on.rectangle.fill")
         photoImage.image = image
         photoImage.backgroundColor = .darkGray
+        photoImage.contentMode = .center
         photoImage.snp.makeConstraints { (m) in
             m.width.equalTo(414)
             m.height.equalTo(516)
+        }
+        
+        for gesture in photoImage.gestureRecognizers! {
+            gesture.isEnabled = true
         }
         
         
@@ -62,18 +74,20 @@ extension PostEditViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectImage: UIImage? = nil
           
-        if let image = info[.editedImage] as? UIImage {
-            selectImage = image
-        } else if let image = info[.originalImage] as? UIImage {
+        if let image = info[.originalImage] as? UIImage {
             selectImage = image
           }
         
         photoImage.backgroundColor = .white
         photoImage.contentMode = .scaleAspectFill
         photoImage.image = selectImage
+        for gesture in photoImage.gestureRecognizers! {
+            gesture.isEnabled = false
+        }
         
         let deleteButton = UIButton()
         let deleteImage = UIImage(systemName: "xmark.circle.fill")
+        deleteButton.tag = 99
         deleteButton.setImage(deleteImage, for: .normal)
         photoImage.addSubview(deleteButton)
         deleteButton.snp.makeConstraints { (m) in
