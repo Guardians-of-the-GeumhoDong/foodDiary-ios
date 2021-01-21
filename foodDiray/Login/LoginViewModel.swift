@@ -12,7 +12,7 @@ import Security
 
 protocol LoginProtocol {
     func successEvent()
-    func failedEvent()
+    func failedEvent(_ error: String)
 }
 
 class LoginViewModel {
@@ -35,28 +35,31 @@ class LoginViewModel {
             
             AF.request(dto.getLoginPath(), method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
                 
-                var error : Error?
-                
+                do {
                 switch response.result {
                 case .success(let value):
                     
-                    let json = try! JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                    let data = try! JSONDecoder().decode(Login.self, from: json)
+                    let json = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                    let data = try JSONDecoder().decode(Login.self, from: json)
 
+                    if data.alert == nil {
                     UserDefaults.standard.set(data.jti, forKey: "jti")
                     UserDefaults.standard.set(data.email, forKey: "email")
-                    
+                
                     self.successLogin()
+                        
+                    } else {
+                        self.failedLogin("로그인 실패")
+                    }
                     break
                     
-                case .failure(let err):
-                    error = err
+                case .failure:
+                    self.failedLogin("로그인 실패")
                     break
                 }
-                
-                if error != nil {
-                    print(error!.localizedDescription)
-                    self.failedLogin()
+                    
+                } catch {
+                    self.failedLogin("로그인 실패")
                 }
         }
         }
@@ -69,28 +72,28 @@ class LoginViewModel {
         
         AF.request(dto.getLoginPath(), method: .post, parameters: param, encoding: JSONEncoding.default).responseJSON { (response) in
             
-            var error : Error?
-            
+            do {
             switch response.result {
             case .success(let value):
                 
-                let json = try! JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                let data = try! JSONDecoder().decode(Login.self, from: json)
-
+                let json = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
+                let data = try JSONDecoder().decode(Login.self, from: json)
+                
+                if data.alert == nil {
                 UserDefaults.standard.set(data.jti, forKey: "jti")
                 UserDefaults.standard.set(data.email, forKey: "email")
             
                 self.successLogin()
+                } else {
+                    self.failedLogin("로그인 실패")
+                }
                 break
-                
-            case .failure(let err):
-                error = err
+            case .failure:
+                self.failedLogin("로그인 실패")
                 break
             }
-            
-            if error != nil {
-                print(error!.localizedDescription)
-                self.failedLogin()
+            } catch {
+                self.failedLogin("로그인 실패")
             }
     }
     }
@@ -105,7 +108,7 @@ class LoginViewModel {
         self.delegate?.successEvent()
     }
     
-    func failedLogin() {
-        self.delegate?.failedEvent()
+    func failedLogin(_ error: String) {
+        self.delegate?.failedEvent(error)
     }
 }

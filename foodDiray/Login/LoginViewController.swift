@@ -11,6 +11,7 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     private var vm : LoginViewModel?
 
@@ -30,10 +31,30 @@ class LoginViewController: UIViewController {
         vm?.delegate = nil
         vm = nil
     }
+    
+    func checkEnableLogin() {
+        if passwordText.text!.isEmpty || emailText.text!.isEmpty {
+            loginButton.isUserInteractionEnabled = false
+            loginButton.backgroundColor = .lightGray
+        } else {
+            loginButton.isUserInteractionEnabled = true
+            loginButton.backgroundColor = .systemRed
+        }
+    }
 
     @IBAction func loginEvent(_ sender: UIButton) {
         vm?.login(email: emailText.text, password: passwordText.text)
     }
+    
+    @IBAction func emailEditChange(_ sender: UITextField) {
+        checkEnableLogin()
+    }
+    
+    @IBAction func passwordEditChange(_ sender: UITextField) {
+        checkEnableLogin()
+    }
+    
+    
 }
 
 
@@ -47,14 +68,10 @@ extension LoginViewController : LoginProtocol {
         
     }
     
-    func failedEvent() {
+    func failedEvent(_ error: String) {
         
-        var message : String?
-        
-        let alert = UIAlertController(title: "로그인 실패", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
 }
