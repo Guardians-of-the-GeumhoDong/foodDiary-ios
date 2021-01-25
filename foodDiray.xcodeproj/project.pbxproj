@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		2748A6AAA3F9E39256070313 /* Pods_foodDiray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C87C27929308062D131F3901 /* Pods_foodDiray.framework */; };
 		8215805025AD8BB6005CB92B /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8215804F25AD8BB6005CB92B /* MainTableViewCell.swift */; };
+		821F7A3825BEC5390090896E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F7A3725BEC5390090896E /* RegisterViewModel.swift */; };
+		821F7A3B25BEC5E70090896E /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F7A3A25BEC5E70090896E /* RegisterModel.swift */; };
 		82365903259C71800008F668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82365902259C71800008F668 /* AppDelegate.swift */; };
 		82365905259C71800008F668 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82365904259C71800008F668 /* SceneDelegate.swift */; };
 		8236590A259C71800008F668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82365908259C71800008F668 /* Main.storyboard */; };
 		8236590C259C71810008F668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8236590B259C71810008F668 /* Assets.xcassets */; };
 		8236590F259C71810008F668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8236590D259C71810008F668 /* LaunchScreen.storyboard */; };
+		8237F0E825BEBA9200309119 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8237F0E725BEBA9200309119 /* RegisterViewController.swift */; };
 		82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658D9B259DAB69006E341D /* LoginViewModel.swift */; };
 		82658D9E259DAB69006E341D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658D9C259DAB69006E341D /* LoginViewController.swift */; };
 		82658DA2259DC6E0006E341D /* NetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658DA1259DC6E0006E341D /* NetworkDTO.swift */; };
@@ -25,6 +28,8 @@
 /* Begin PBXFileReference section */
 		783A09E34F913B560884BFD8 /* Pods-foodDiray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-foodDiray.release.xcconfig"; path = "Target Support Files/Pods-foodDiray/Pods-foodDiray.release.xcconfig"; sourceTree = "<group>"; };
 		8215804F25AD8BB6005CB92B /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		821F7A3725BEC5390090896E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		821F7A3A25BEC5E70090896E /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		823658FF259C71800008F668 /* foodDiray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = foodDiray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82365902259C71800008F668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82365904259C71800008F668 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		8236590B259C71810008F668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8236590E259C71810008F668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82365910259C71810008F668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8237F0E725BEBA9200309119 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		82658D9B259DAB69006E341D /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		82658D9C259DAB69006E341D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		82658DA1259DC6E0006E341D /* NetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDTO.swift; sourceTree = "<group>"; };
@@ -83,9 +89,10 @@
 		82365901259C71800008F668 /* foodDiray */ = {
 			isa = PBXGroup;
 			children = (
+				82658DA1259DC6E0006E341D /* NetworkDTO.swift */,
+				8237F0E625BEBA7100309119 /* Register */,
 				82B66E6C25B05F2D004A47F9 /* Post */,
 				82F4EE1125AD89B700EB1C00 /* Main */,
-				82658DA0259DC6CB006E341D /* Network */,
 				82658D9A259DAB69006E341D /* Login */,
 				82658D99259DAB06006E341D /* Storyboard */,
 				82365902259C71800008F668 /* AppDelegate.swift */,
@@ -95,6 +102,16 @@
 				82365910259C71810008F668 /* Info.plist */,
 			);
 			path = foodDiray;
+			sourceTree = "<group>";
+		};
+		8237F0E625BEBA7100309119 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8237F0E725BEBA9200309119 /* RegisterViewController.swift */,
+				821F7A3725BEC5390090896E /* RegisterViewModel.swift */,
+				821F7A3A25BEC5E70090896E /* RegisterModel.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		82658D99259DAB06006E341D /* Storyboard */ = {
@@ -113,14 +130,6 @@
 				82CEB63725A30735000FF524 /* LoginModel.swift */,
 			);
 			path = Login;
-			sourceTree = "<group>";
-		};
-		82658DA0259DC6CB006E341D /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				82658DA1259DC6E0006E341D /* NetworkDTO.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		82B66E6C25B05F2D004A47F9 /* Post */ = {
@@ -264,11 +273,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */,
+				8237F0E825BEBA9200309119 /* RegisterViewController.swift in Sources */,
 				82CEB63825A30735000FF524 /* LoginModel.swift in Sources */,
 				82B66E6E25B05F40004A47F9 /* PostEditViewController.swift in Sources */,
+				821F7A3825BEC5390090896E /* RegisterViewModel.swift in Sources */,
 				8215805025AD8BB6005CB92B /* MainTableViewCell.swift in Sources */,
 				82365903259C71800008F668 /* AppDelegate.swift in Sources */,
 				82658DA2259DC6E0006E341D /* NetworkDTO.swift in Sources */,
+				821F7A3B25BEC5E70090896E /* RegisterModel.swift in Sources */,
 				82658D9E259DAB69006E341D /* LoginViewController.swift in Sources */,
 				82365905259C71800008F668 /* SceneDelegate.swift in Sources */,
 				82F4EE1C25AD8A3400EB1C00 /* MainViewController.swift in Sources */,

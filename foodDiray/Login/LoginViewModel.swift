@@ -23,11 +23,10 @@ class LoginViewModel {
     
     
     func loginJTI() {
-        
-        let dto = NetworkDTO()
-        
+    
         if let jti = UserDefaults.standard.object(forKey: "jti") {
             
+            let dto = NetworkDTO()
             let header : HTTPHeaders = [
                 "Authorization" : String("Bearer \(jti)"),
                 "Accept": "application/json"
@@ -43,10 +42,7 @@ class LoginViewModel {
                     let data = try JSONDecoder().decode(Login.self, from: json)
 
                     if data.alert == nil {
-                    UserDefaults.standard.set(data.jti, forKey: "jti")
-                    UserDefaults.standard.set(data.email, forKey: "email")
-                
-                    self.successLogin()
+                    self.successLogin(data)
                         
                     } else {
                         self.failedLogin("로그인 실패")
@@ -80,10 +76,7 @@ class LoginViewModel {
                 let data = try JSONDecoder().decode(Login.self, from: json)
                 
                 if data.alert == nil {
-                UserDefaults.standard.set(data.jti, forKey: "jti")
-                UserDefaults.standard.set(data.email, forKey: "email")
-            
-                self.successLogin()
+                self.successLogin(data)
                 } else {
                     self.failedLogin("로그인 실패")
                 }
@@ -104,7 +97,11 @@ class LoginViewModel {
     }
     
     
-    func successLogin() {
+    func successLogin(_ data: Login) {
+        
+        UserDefaults.standard.set(data.jti, forKey: "jti")
+        UserDefaults.standard.set(data.email, forKey: "email")
+    
         self.delegate?.successEvent()
     }
     

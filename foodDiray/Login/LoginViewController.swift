@@ -17,16 +17,14 @@ class LoginViewController: UIViewController {
 
     
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
         vm = LoginViewModel()
         vm?.delegate = self
-    
-        vm?.loginJTI()
+        
+        self.loginJTI()
+        
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         vm?.delegate = nil
         vm = nil
@@ -40,6 +38,10 @@ class LoginViewController: UIViewController {
             loginButton.isUserInteractionEnabled = true
             loginButton.backgroundColor = .systemRed
         }
+    }
+    
+    func loginJTI() {
+        vm?.loginJTI()
     }
 
     @IBAction func loginEvent(_ sender: UIButton) {
