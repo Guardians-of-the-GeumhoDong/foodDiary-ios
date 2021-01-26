@@ -28,6 +28,7 @@ struct Register : Codable {
     var email : String?
     var name : String?
     var jti : String?
+    var emailError : Array<String>?
     
     enum codingKeys: CodingKey {
         case id
@@ -43,5 +44,10 @@ struct Register : Codable {
         email = try? data.decode(String.self, forKey: .email)
         name = try? data.decode(String.self, forKey: .name)
         jti = try? data.decode(String.self, forKey: .jti)
+
+        if id == nil {
+            let error = try? data.nestedContainer(keyedBy: codingKeys.self, forKey: .email)
+            emailError = try? error?.decode(Array<String>.self, forKey: .email)
+        }
     }
 }

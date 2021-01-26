@@ -64,7 +64,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController : LoginProtocol {
     
     func successEvent() {
-        let view = self.storyboard?.instantiateViewController(identifier: "MainViewController") as! MainViewController
+        let view = self.storyboard?.instantiateViewController(identifier: "MainTabBarViewController") as! UITabBarController
         view.modalPresentationStyle = .fullScreen
         self.present(view, animated: false, completion: nil)
         
