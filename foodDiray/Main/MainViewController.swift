@@ -20,6 +20,7 @@ class MainViewController : UIViewController {
     
     @IBAction func showPostEdit(_ sender: UIButton) {
         let view = self.storyboard?.instantiateViewController(identifier: "PostEditViewController") as! PostEditViewController
+        view.modalPresentationStyle = .fullScreen
         self.present(view, animated: false, completion: nil)
     }
 }

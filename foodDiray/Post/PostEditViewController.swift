@@ -13,6 +13,7 @@ class PostEditViewController: UIViewController {
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var titleTextView: UITextView!
     
     
     let picker = UIImagePickerController()
@@ -30,7 +31,8 @@ class PostEditViewController: UIViewController {
         formmatter.dateFormat = "yyyy-MM-dd"
         dateLabel.text = formmatter.string(from: Date())
         
-        memoTextView.delegate = self        
+        memoTextView.delegate = self
+        titleTextView.delegate = self
     }
 
     @objc func showPhotoAlert() {
@@ -113,15 +115,25 @@ extension PostEditViewController: UIImagePickerControllerDelegate, UINavigationC
 extension PostEditViewController : UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "내용을 입력해주세요" {
+        if textView == memoTextView && textView.text == "내용을 입력해주세요" {
+            textView.text = nil
+            textView.textColor = .black
+        }
+        
+        if textView == titleTextView && textView.text == "제목을 입력해주세요" {
             textView.text = nil
             textView.textColor = .black
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
+        if textView == memoTextView && textView.text.isEmpty {
             textView.text = "내용을 입력해주세요"
+            textView.textColor = .lightGray
+        }
+        
+        if textView == titleTextView && textView.text.isEmpty {
+            textView.text = "제목을 입력해주세요"
             textView.textColor = .lightGray
         }
     }
