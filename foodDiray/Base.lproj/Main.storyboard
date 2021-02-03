@@ -378,19 +378,19 @@
             </objects>
             <point key="canvasLocation" x="880" y="1557"/>
         </scene>
-        <!--Post Edit View Controller-->
+        <!--Create Post View Controller-->
         <scene sceneID="DN4-IK-euw">
             <objects>
-                <viewController storyboardIdentifier="PostEditViewController" id="5mq-pg-iwD" customClass="PostEditViewController" customModule="foodDiray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreatePostViewController" id="5mq-pg-iwD" customClass="CreatePostViewController" customModule="foodDiray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1AG-4b-w8w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-E6-oVW">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-rB-8lu">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="724"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="87h-0f-Lln">
                                                 <rect key="frame" x="0.0" y="0.33333333333331439" width="414" height="516.99999999999989"/>
@@ -460,7 +460,7 @@
                                             <constraint firstAttribute="trailing" secondItem="tdz-6p-YER" secondAttribute="trailing" constant="20" id="plh-76-nDY"/>
                                             <constraint firstItem="exf-5r-IJu" firstAttribute="leading" secondItem="Tgk-rB-8lu" secondAttribute="leading" constant="20" id="qQk-hc-H3h"/>
                                             <constraint firstItem="pIh-jA-nCC" firstAttribute="leading" secondItem="Tgk-rB-8lu" secondAttribute="leading" constant="20" id="rVE-Uz-aAb"/>
-                                            <constraint firstAttribute="bottom" secondItem="ypO-Zi-Uql" secondAttribute="bottom" constant="20" id="sA2-pm-HnY"/>
+                                            <constraint firstAttribute="bottom" secondItem="ypO-Zi-Uql" secondAttribute="bottom" constant="50" id="sA2-pm-HnY"/>
                                             <constraint firstItem="87h-0f-Lln" firstAttribute="top" secondItem="Tgk-rB-8lu" secondAttribute="top" id="xZe-pu-UPd"/>
                                             <constraint firstItem="ypO-Zi-Uql" firstAttribute="top" secondItem="exf-5r-IJu" secondAttribute="bottom" constant="10" id="y72-c6-iT0"/>
                                             <constraint firstItem="tdz-6p-YER" firstAttribute="top" secondItem="pIh-jA-nCC" secondAttribute="bottom" constant="15" id="z6B-bl-wwD"/>
@@ -477,21 +477,51 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="XL9-qD-VBz"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="CSf-nX-FsK"/>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-Qb-0N3">
+                                <rect key="frame" x="20" y="31" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="ALa-a3-0vN"/>
+                                    <constraint firstAttribute="width" secondItem="Mha-Qb-0N3" secondAttribute="height" multiplier="1:1" id="SpM-Kb-K8T"/>
+                                </constraints>
+                                <state key="normal" image="xmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="5mq-pg-iwD" eventType="touchUpInside" id="msi-ld-BAf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlP-iV-lnG">
+                                <rect key="frame" x="359" y="31" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="FMt-n2-Bln"/>
+                                    <constraint firstAttribute="width" secondItem="IlP-iV-lnG" secondAttribute="height" multiplier="1:1" id="IQB-Kq-nXz"/>
+                                </constraints>
+                                <state key="normal" image="checkmark" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                </state>
+                                <connections>
+                                    <action selector="creatPost:" destination="5mq-pg-iwD" eventType="touchUpInside" id="9ft-zR-dQk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Yr8-sz-rAT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="1AG-4b-w8w" secondAttribute="topMargin" id="aSZ-7Z-Xba"/>
+                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="1AG-4b-w8w" secondAttribute="topMargin" constant="30" id="aSZ-7Z-Xba"/>
+                            <constraint firstItem="Yr8-sz-rAT" firstAttribute="trailing" secondItem="IlP-iV-lnG" secondAttribute="trailing" constant="20" id="iGh-Kn-opG"/>
                             <constraint firstItem="Yr8-sz-rAT" firstAttribute="bottom" secondItem="B6e-E6-oVW" secondAttribute="bottom" id="kyS-mf-4FW"/>
+                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="IlP-iV-lnG" secondAttribute="bottom" constant="8" symbolic="YES" id="lH3-DQ-oSU"/>
+                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="Mha-Qb-0N3" secondAttribute="bottom" constant="8" symbolic="YES" id="n7y-1W-6vK"/>
                             <constraint firstAttribute="trailing" secondItem="B6e-E6-oVW" secondAttribute="trailing" id="sMU-hk-r2x"/>
                             <constraint firstItem="B6e-E6-oVW" firstAttribute="leading" secondItem="1AG-4b-w8w" secondAttribute="leading" id="uVu-rk-9up"/>
+                            <constraint firstItem="Mha-Qb-0N3" firstAttribute="leading" secondItem="Yr8-sz-rAT" secondAttribute="leading" constant="20" id="zhS-Ix-Cfg"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dateLabel" destination="gzQ-ZS-aI4" id="TZZ-it-0Hr"/>
-                        <outlet property="memoTextView" destination="ypO-Zi-Uql" id="KRx-7q-7TN"/>
-                        <outlet property="photoImage" destination="87h-0f-Lln" id="1vr-94-Il1"/>
-                        <outlet property="titleTextView" destination="tdz-6p-YER" id="eJI-lJ-Cnh"/>
+                        <outlet property="dateLabel" destination="gzQ-ZS-aI4" id="LJG-qB-aQ0"/>
+                        <outlet property="memoTextView" destination="ypO-Zi-Uql" id="ezO-5D-jRA"/>
+                        <outlet property="photoImage" destination="87h-0f-Lln" id="hmn-JH-zBh"/>
+                        <outlet property="titleTextView" destination="tdz-6p-YER" id="Ln6-m3-uv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwg-Ff-Kh3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -502,12 +532,14 @@
     <resources>
         <image name="20170910011347_photo1_481363df942d" width="750" height="625"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="96"/>
         <image name="scribble.variable" catalog="system" width="128" height="118"/>
         <image name="star" width="128" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

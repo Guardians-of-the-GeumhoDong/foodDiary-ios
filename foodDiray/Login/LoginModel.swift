@@ -23,6 +23,7 @@ class LoginModel {
 struct Login : Codable {
     var email: String?
     var jti : String?
+    
     var alert : String?
     
     enum codingKeys: CodingKey {
@@ -36,6 +37,7 @@ struct Login : Codable {
         
         email = try? data.decode(String.self, forKey: .email)
         jti = try? data.decode(String.self, forKey: .jti)
+        
         alert = try? data.decode(String.self, forKey: .alert)
     }
 }

@@ -8,12 +8,14 @@
 import UIKit
 import SnapKit
 
-class PostEditViewController: UIViewController {
+class CreatePostViewController: UIViewController {
 
     @IBOutlet weak var photoImage: UIImageView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var memoTextView: UITextView!
+    
+    var vm : CreatePostViewModel?
     
     
     let picker = UIImagePickerController()
@@ -33,6 +35,14 @@ class PostEditViewController: UIViewController {
         
         memoTextView.delegate = self
         titleTextView.delegate = self
+        
+        vm = CreatePostViewModel()
+        vm?.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        vm?.delegate = nil
+        vm = nil
     }
 
     @objc func showPhotoAlert() {
@@ -70,10 +80,21 @@ class PostEditViewController: UIViewController {
         
         
     }
+    
+    func close() {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    @IBAction func creatPost(_ sender: UIButton) {
+        CreatePostViewModel().createPost(title: titleTextView.text, rating: 1, creatTime: dateLabel.text! , memo: memoTextView.text, images: photoImage.image!)
+    }
+    
+    @IBAction func close(_ sender: UIButton) {
+        self.close()
+    }
 }
 
-extension PostEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         var selectImage: UIImage? = nil
@@ -112,7 +133,7 @@ extension PostEditViewController: UIImagePickerControllerDelegate, UINavigationC
     
 }
 
-extension PostEditViewController : UITextViewDelegate {
+extension CreatePostViewController : UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView == memoTextView && textView.text == "내용을 입력해주세요" {
@@ -137,5 +158,18 @@ extension PostEditViewController : UITextViewDelegate {
             textView.textColor = .lightGray
         }
     }
+    
+}
+
+extension CreatePostViewController : CreatePostProtocol {
+    
+    func successEvent() {
+        self.close()
+    }
+    
+    func failedEvent(_ error: String) {
+        self.close()
+    }
+    
     
 }

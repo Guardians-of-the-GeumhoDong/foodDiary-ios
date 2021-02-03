@@ -23,14 +23,10 @@ class LoginViewModel {
     
     
     func loginJTI() {
+        
+        let dto = NetworkDTO()
     
-        if let jti = UserDefaults.standard.object(forKey: "jti") {
-            
-            let dto = NetworkDTO()
-            let header : HTTPHeaders = [
-                "Authorization" : String("Bearer \(jti)"),
-                "Accept": "application/json"
-            ]
+        if let header = dto.getHeader() {
             
             AF.request(dto.getLoginPath(), method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
                 

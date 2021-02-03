@@ -13,7 +13,19 @@ class NetworkDTO {
     
     private final let loginURL = "login"
     private final let registerURL = "register"
+    private final let creatPostURL = "v1/posts"
     
+    func getHeader() -> HTTPHeaders? {
+        
+        if let jti = UserDefaults.standard.object(forKey: "jti") {
+        return HTTPHeaders([
+            "Authorization" : String("Bearer \(jti)"),
+            "Accept": "application/json"
+        ])
+        } else {
+            return nil
+        }
+    }
     
     func getLoginPath() -> String {
         return String("\(self.baseURL)\(self.loginURL)")
@@ -21,6 +33,10 @@ class NetworkDTO {
     
     func getResisterPath() -> String {
         return String("\(self.baseURL)\(self.registerURL)")
+    }
+    
+    func getCreatePostPath() -> String {
+        return String("\(self.baseURL)\(self.creatPostURL)")
     }
     
 }

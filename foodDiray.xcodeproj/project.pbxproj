@@ -21,7 +21,9 @@
 		82658D9E259DAB69006E341D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658D9C259DAB69006E341D /* LoginViewController.swift */; };
 		82658DA2259DC6E0006E341D /* NetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82658DA1259DC6E0006E341D /* NetworkDTO.swift */; };
 		8289A8BA25BFFEB000F9BA0A /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8B925BFFEB000F9BA0A /* MyViewController.swift */; };
-		82B66E6E25B05F40004A47F9 /* PostEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B66E6D25B05F40004A47F9 /* PostEditViewController.swift */; };
+		828A5A5F25CA8030004CD9F0 /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */; };
+		828A5A6425CA87B3004CD9F0 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */; };
+		82B66E6E25B05F40004A47F9 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */; };
 		82CEB63825A30735000FF524 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CEB63725A30735000FF524 /* LoginModel.swift */; };
 		82F4EE1C25AD8A3400EB1C00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4EE1B25AD8A3400EB1C00 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,7 +45,9 @@
 		82658D9C259DAB69006E341D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		82658DA1259DC6E0006E341D /* NetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDTO.swift; sourceTree = "<group>"; };
 		8289A8B925BFFEB000F9BA0A /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
-		82B66E6D25B05F40004A47F9 /* PostEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostEditViewController.swift; sourceTree = "<group>"; };
+		828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
+		828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
+		82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		82CEB63725A30735000FF524 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		82F4EE1B25AD8A3400EB1C00 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C87C27929308062D131F3901 /* Pods_foodDiray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_foodDiray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +98,6 @@
 				82365908259C71800008F668 /* Main.storyboard */,
 				8289A8B725BFFE9A00F9BA0A /* My */,
 				82658DA1259DC6E0006E341D /* NetworkDTO.swift */,
-				8237F0E625BEBA7100309119 /* Register */,
 				82B66E6C25B05F2D004A47F9 /* Post */,
 				82F4EE1125AD89B700EB1C00 /* Main */,
 				82658D9A259DAB69006E341D /* Login */,
@@ -107,19 +110,12 @@
 			path = foodDiray;
 			sourceTree = "<group>";
 		};
-		8237F0E625BEBA7100309119 /* Register */ = {
+		82658D9A259DAB69006E341D /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				8237F0E725BEBA9200309119 /* RegisterViewController.swift */,
 				821F7A3725BEC5390090896E /* RegisterViewModel.swift */,
 				821F7A3A25BEC5E70090896E /* RegisterModel.swift */,
-			);
-			path = Register;
-			sourceTree = "<group>";
-		};
-		82658D9A259DAB69006E341D /* Login */ = {
-			isa = PBXGroup;
-			children = (
 				82658D9B259DAB69006E341D /* LoginViewModel.swift */,
 				82658D9C259DAB69006E341D /* LoginViewController.swift */,
 				82CEB63725A30735000FF524 /* LoginModel.swift */,
@@ -138,7 +134,9 @@
 		82B66E6C25B05F2D004A47F9 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				82B66E6D25B05F40004A47F9 /* PostEditViewController.swift */,
+				82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */,
+				828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */,
+				828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -275,10 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				828A5A6425CA87B3004CD9F0 /* CreatePostModel.swift in Sources */,
+				828A5A5F25CA8030004CD9F0 /* CreatePostViewModel.swift in Sources */,
 				82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */,
 				8237F0E825BEBA9200309119 /* RegisterViewController.swift in Sources */,
 				82CEB63825A30735000FF524 /* LoginModel.swift in Sources */,
-				82B66E6E25B05F40004A47F9 /* PostEditViewController.swift in Sources */,
+				82B66E6E25B05F40004A47F9 /* CreatePostViewController.swift in Sources */,
 				821F7A3825BEC5390090896E /* RegisterViewModel.swift in Sources */,
 				8215805025AD8BB6005CB92B /* MainTableViewCell.swift in Sources */,
 				82365903259C71800008F668 /* AppDelegate.swift in Sources */,
