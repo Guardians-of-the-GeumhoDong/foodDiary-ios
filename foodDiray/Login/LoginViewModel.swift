@@ -26,7 +26,7 @@ class LoginViewModel {
         
         let dto = NetworkDTO()
     
-        if let header = dto.getHeader() {
+        if let header = dto.getJSONHeader() {
             
             AF.request(dto.getLoginPath(), method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
                 

@@ -9,14 +9,13 @@ import Alamofire
 
 class CreatePostModel {
  
-    func getCreatePostParam(title: String, rating: Int, createTime: String, memo: String, images: UIImage) -> Parameters {
+    func getCreatePostParam(title: String, rating: Int, createTime: String, memo: String) -> Parameters {
         
         let param : Parameters = [
             "title" : title,
             "rating" : rating,
             "write_at" : createTime,
-            "description" : memo,
-            "images[]": images
+            "description" : memo
         ]
         
         return param

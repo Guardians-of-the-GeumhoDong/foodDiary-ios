@@ -15,12 +15,24 @@ class NetworkDTO {
     private final let registerURL = "register"
     private final let creatPostURL = "v1/posts"
     
-    func getHeader() -> HTTPHeaders? {
+    func getJSONHeader() -> HTTPHeaders? {
         
         if let jti = UserDefaults.standard.object(forKey: "jti") {
         return HTTPHeaders([
             "Authorization" : String("Bearer \(jti)"),
             "Accept": "application/json"
+        ])
+        } else {
+            return nil
+        }
+    }
+    
+    func getDataHeader() -> HTTPHeaders? {
+        
+        if let jti = UserDefaults.standard.object(forKey: "jti") {
+        return HTTPHeaders([
+            "Authorization" : String("Bearer \(jti)"),
+            "Accept": "multipart/form-data"
         ])
         } else {
             return nil
