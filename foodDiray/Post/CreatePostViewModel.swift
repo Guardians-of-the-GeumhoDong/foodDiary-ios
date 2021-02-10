@@ -34,7 +34,7 @@ class CreatePostViewModel {
             let imageData = images.jpegData(compressionQuality: 0.5)
             multipartFormData.append(imageData!, withName: "images[]", fileName: "postImage", mimeType: "image/jpeg")
 
-        }, to: dto.getCreatePostPath(), headers: header).response { (response) in
+        }, to: dto.getPostPath(), headers: header).response { (response) in
 
             do {
             switch response.response?.statusCode {

@@ -13,7 +13,7 @@ class NetworkDTO {
     
     private final let loginURL = "login"
     private final let registerURL = "register"
-    private final let creatPostURL = "v1/posts"
+    private final let postURL = "v1/posts"
     
     func getJSONHeader() -> HTTPHeaders? {
         
@@ -47,8 +47,8 @@ class NetworkDTO {
         return String("\(self.baseURL)\(self.registerURL)")
     }
     
-    func getCreatePostPath() -> String {
-        return String("\(self.baseURL)\(self.creatPostURL)")
+    func getPostPath() -> String {
+        return String("\(self.baseURL)\(self.postURL)")
     }
     
 }

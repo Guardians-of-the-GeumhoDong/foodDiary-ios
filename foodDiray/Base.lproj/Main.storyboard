@@ -231,7 +231,7 @@
         <!--HOME-->
         <scene sceneID="erD-Ot-O6o">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="uOy-8I-Nh2" customClass="MainViewController" customModule="foodDiray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewController" id="uOy-8I-Nh2" customClass="TimelineViewController" customModule="foodDiray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TVC-Eb-OK6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainCell" id="pvM-O4-ST6" customClass="MainTableViewCell" customModule="foodDiray" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineCell" id="pvM-O4-ST6" customClass="TimelineTableViewCell" customModule="foodDiray" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="448.33334350585938"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pvM-O4-ST6" id="MQr-bR-Csr">
