@@ -16,6 +16,7 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var memoTextView: UITextView!
     
     var vm : CreatePostViewModel?
+    var viewKeyboard = false
     
     
     let picker = UIImagePickerController()
@@ -35,12 +36,33 @@ class CreatePostViewController: UIViewController {
         
         memoTextView.delegate = self
         titleTextView.delegate = self
-        
+    
         vm = CreatePostViewModel()
         vm?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @objc func showPhotoAlert() {
+        
+        if self.viewKeyboard {
+            self.view.endEditing(true)
+            return
+        }
+        
         
         let alert = UIAlertController(title: "사진 선택", message: nil, preferredStyle: .actionSheet)
         let albumAction = UIAlertAction(title: "앨범", style: .default) { (action) in
@@ -68,13 +90,33 @@ class CreatePostViewController: UIViewController {
             m.width.equalTo(414)
             m.height.equalTo(516)
         }
-        
-        for gesture in photoImage.gestureRecognizers! {
-            gesture.isEnabled = true
-        }
-        
-        
     }
+    
+    @objc func keyboardWillShow(_ sender:Notification){
+        self.viewKeyboard = true
+        
+        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0{
+                self.view.frame.origin.y -= keyboardSize.height * 1.2
+            }
+        }
+    }
+        
+    @objc func keyboardWillHide(_ sender:Notification){
+        self.viewKeyboard = false
+        
+        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+              if self.view.frame.origin.y != 0{
+                self.view.frame.origin.y += keyboardSize.height * 1.2
+                
+                if self.view.frame.origin.y >= 0 {
+                    self.view.frame.origin.y = 0
+                }
+              }
+          }
+    }
+    
+    
     
     func close() {
         self.dismiss(animated: true, completion: nil)
@@ -101,10 +143,7 @@ extension CreatePostViewController: UIImagePickerControllerDelegate, UINavigatio
         photoImage.backgroundColor = .white
         photoImage.contentMode = .scaleAspectFill
         photoImage.image = selectImage
-        for gesture in photoImage.gestureRecognizers! {
-            gesture.isEnabled = false
-        }
-        
+
         let deleteButton = UIButton()
         let deleteImage = UIImage(systemName: "xmark.circle.fill")
         deleteButton.tag = 99
@@ -140,6 +179,7 @@ extension CreatePostViewController : UITextViewDelegate {
             textView.text = nil
             textView.textColor = .black
         }
+    
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

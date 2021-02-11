@@ -370,7 +370,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6e-E6-oVW">
-                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tgk-rB-8lu">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="754"/>
@@ -461,7 +461,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="CSf-nX-FsK"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-Qb-0N3">
-                                <rect key="frame" x="20" y="31" width="35" height="35"/>
+                                <rect key="frame" x="20" y="41" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="ALa-a3-0vN"/>
                                     <constraint firstAttribute="width" secondItem="Mha-Qb-0N3" secondAttribute="height" multiplier="1:1" id="SpM-Kb-K8T"/>
@@ -474,7 +474,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlP-iV-lnG">
-                                <rect key="frame" x="359" y="31" width="35" height="35"/>
+                                <rect key="frame" x="359" y="41" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="35" id="FMt-n2-Bln"/>
                                     <constraint firstAttribute="width" secondItem="IlP-iV-lnG" secondAttribute="height" multiplier="1:1" id="IQB-Kq-nXz"/>
@@ -490,7 +490,7 @@
                         <viewLayoutGuide key="safeArea" id="Yr8-sz-rAT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="1AG-4b-w8w" secondAttribute="topMargin" constant="30" id="aSZ-7Z-Xba"/>
+                            <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="1AG-4b-w8w" secondAttribute="topMargin" constant="40" id="aSZ-7Z-Xba"/>
                             <constraint firstItem="Yr8-sz-rAT" firstAttribute="trailing" secondItem="IlP-iV-lnG" secondAttribute="trailing" constant="20" id="iGh-Kn-opG"/>
                             <constraint firstItem="Yr8-sz-rAT" firstAttribute="bottom" secondItem="B6e-E6-oVW" secondAttribute="bottom" id="kyS-mf-4FW"/>
                             <constraint firstItem="B6e-E6-oVW" firstAttribute="top" secondItem="IlP-iV-lnG" secondAttribute="bottom" constant="8" symbolic="YES" id="lH3-DQ-oSU"/>
