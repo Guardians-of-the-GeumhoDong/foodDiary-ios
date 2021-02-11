@@ -24,10 +24,6 @@ class RegisterViewController : UIViewController {
         vm?.delegate = self
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        vm?.delegate = nil
-        vm = nil
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)

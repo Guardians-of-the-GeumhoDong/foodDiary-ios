@@ -40,11 +40,6 @@ class CreatePostViewController: UIViewController {
         vm?.delegate = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        vm?.delegate = nil
-        vm = nil
-    }
-
     @objc func showPhotoAlert() {
         
         let alert = UIAlertController(title: "사진 선택", message: nil, preferredStyle: .actionSheet)
@@ -86,7 +81,7 @@ class CreatePostViewController: UIViewController {
     }
 
     @IBAction func creatPost(_ sender: UIButton) {
-        CreatePostViewModel().createPost(title: titleTextView.text, rating: 1, creatTime: dateLabel.text! , memo: memoTextView.text, images: photoImage.image!)
+        vm?.createPost(title: titleTextView.text, rating: 1, creatTime: dateLabel.text! , memo: memoTextView.text, images: photoImage.image!)
     }
     
     @IBAction func close(_ sender: UIButton) {

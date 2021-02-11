@@ -15,19 +15,12 @@ class LoginViewController: UIViewController {
     
     private var vm : LoginViewModel?
 
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidLoad() {
         vm = LoginViewModel()
         vm?.delegate = self
         
         self.loginJTI()
         
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        vm?.delegate = nil
-        vm = nil
     }
     
     func checkEnableLogin() {

@@ -18,6 +18,9 @@ class TimelineViewController : UIViewController {
         super.viewDidLoad()
         
         vm.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         vm.loadTimeline()
     }
 
