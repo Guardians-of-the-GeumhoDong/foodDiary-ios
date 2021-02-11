@@ -10,6 +10,7 @@ import Alamofire
 class NetworkDTO {
     
     private final let baseURL = "https://food-diary-dev.herokuapp.com/"
+    private final let imageBaseURL = "https://food-diary-dev.herokuapp.com"
     
     private final let loginURL = "login"
     private final let registerURL = "register"
@@ -18,6 +19,7 @@ class NetworkDTO {
     func getJSONHeader() -> HTTPHeaders? {
         
         if let jti = UserDefaults.standard.object(forKey: "jti") {
+            print(jti)
         return HTTPHeaders([
             "Authorization" : String("Bearer \(jti)"),
             "Accept": "application/json"
@@ -49,6 +51,10 @@ class NetworkDTO {
     
     func getPostPath() -> String {
         return String("\(self.baseURL)\(self.postURL)")
+    }
+    
+    func getImageURL(url : String) -> String {
+        return String("\(self.imageBaseURL)\(url)")
     }
     
 }

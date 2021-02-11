@@ -15,7 +15,7 @@ protocol TimelineProtocol {
 
 class TimelineViewModel {
     
-    var postsData : TimelineModel?
+    var postsData = [TimelineModel]()
     
     var delegate : TimelineProtocol?
 
@@ -25,24 +25,16 @@ class TimelineViewModel {
         let dto = NetworkDTO()
         let header = dto.getDataHeader()
         
-        AF.request(dto.getPostPath(), method: .post, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+        AF.request(dto.getPostPath(), method: .get, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             
             do {
-            switch response.result {
-            case .success(let value):
-                
-                let json = try JSONSerialization.data(withJSONObject: value, options: .prettyPrinted)
-                self.postsData = try JSONDecoder().decode(TimelineModel.self, from: json)
-                
-                if response.response?.statusCode == 200 {
+            switch response.response?.statusCode {
+            case 200:
+                let json = try JSONSerialization.data(withJSONObject: response.value, options: .prettyPrinted)
+                let model = try JSONDecoder().decode([TimelineModel].self, from: json)
+                self.postsData = model
                 self.successLoadTimeline()
-                    
-                } else {
-                    self.failedLoadTimeline("타임라인 불러오기 실패")
-                }
-                break
-                
-            case .failure:
+            default:
                 self.failedLoadTimeline("타임라인 불러오기 실패")
                 break
             }
@@ -62,11 +54,10 @@ class TimelineViewModel {
     }
     
     func getPostCount() -> Int {
-        
-        guard let count = postsData?.posts?.count else {
-            return 0
-        }
-        
-        return count
+        return postsData.count
+    }
+    
+    func getPostDataForIndex(_ index : Int) -> TimelineModel? {
+        return postsData[index] ?? nil
     }
 }

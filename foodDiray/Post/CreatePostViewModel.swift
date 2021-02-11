@@ -39,15 +39,7 @@ class CreatePostViewModel {
             do {
             switch response.response?.statusCode {
             case 201, 200:
-
-//                let json = try JSONSerialization.data(withJSONObject: response.value, options: .prettyPrinted)
-//                let data = try JSONDecoder().decode(CreatePost.self, from: json)
-//
-//                if data.alert == nil {
-//                self.successCreatePost()
-//                } else {
-//                    self.failedCreatPost(data.alert!)
-//                }
+               self.successCreatePost()
                break
             default:
                 self.failedCreatPost("포스트 생성 실패")

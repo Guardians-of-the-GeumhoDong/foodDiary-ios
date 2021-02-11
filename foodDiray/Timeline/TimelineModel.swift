@@ -5,26 +5,7 @@
 //  Created by Suhong Jeong on 2021/02/10.
 //
 
-
-struct TimelineModel : Codable {
-    
-    var posts : [TimelineData]?
-
-    
-    init(from decoder: Decoder) throws {
-        var data = try decoder.unkeyedContainer()
-        let wrapper = try? data.decode(TimelineWrapper.self)
-        self.posts = wrapper?.data
-    
-    }
-}
-
-struct TimelineWrapper: Decodable{
-  let data: [TimelineData]?
-
-}
-
-struct TimelineData : Codable {
+struct TimelineModel : Decodable {
     var id : Int?
     var title : String?
     var rating : Int?
