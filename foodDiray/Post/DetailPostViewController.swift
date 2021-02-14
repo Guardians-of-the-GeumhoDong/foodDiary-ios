@@ -17,11 +17,16 @@ class DetailPostViewController : UIViewController {
     
     var vm : DetailPostViewModel?
     
+    var postId = ""
+    
     func loadPost(id : String) {
         vm = DetailPostViewModel()
-        vm?.delegate = self
+        vm?.detailDelegate = self
+        vm?.deleteDelegate = self
         
         vm?.loadPost(id: id)
+        
+        self.postId = id
     }
     
     func setPostUI(_ data : DetailPostModel) {
@@ -38,8 +43,8 @@ class DetailPostViewController : UIViewController {
     @IBAction func showOption(_ sender: UIButton) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let fixAction = UIAlertAction(title: "수정", style: .default, handler: nil)
-        let deleteAction = UIAlertAction(title: "삭제", style: .cancel) { (action) in
-            
+        let deleteAction = UIAlertAction(title: "삭제", style: .default) { (action) in
+            self.vm?.deletePost(id: self.postId)
         }
         let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
@@ -61,6 +66,15 @@ extension DetailPostViewController : DetailPostProtocol {
     }
     
     func failedEvent(_ error: String) {
+        dismiss(animated: true, completion: nil)
+        
+        let view = self.storyboard?.instantiateViewController(identifier: "TimelineViewController") as! TimelineViewController
+        view.updateTimeline()
+    }
+}
+
+extension DetailPostViewController : DeletePostProtocol {
+    func successEvent() {
         dismiss(animated: true, completion: nil)
     }
 }

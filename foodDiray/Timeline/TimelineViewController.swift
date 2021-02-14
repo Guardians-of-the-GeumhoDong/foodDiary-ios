@@ -27,14 +27,18 @@ class TimelineViewController : UIViewController {
         vm.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    func updateTimeline() {
         vm.loadTimeline()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateTimeline()
     }
     
     
     
     @objc func updateTableView(controll: UIRefreshControl) {
-        vm.loadTimeline()
+        updateTimeline()
     }
 
     

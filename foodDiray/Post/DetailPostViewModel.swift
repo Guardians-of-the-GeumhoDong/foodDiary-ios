@@ -12,11 +12,17 @@ protocol DetailPostProtocol {
     func failedEvent(_ error: String)
 }
 
+protocol DeletePostProtocol {
+    func successEvent()
+    func failedEvent(_ error: String)
+}
+
 
 class DetailPostViewModel {
     
     
-    var delegate : DetailPostProtocol?
+    var detailDelegate : DetailPostProtocol?
+    var deleteDelegate : DeletePostProtocol?
 
 
     func loadPost(id : String) {
@@ -37,7 +43,7 @@ class DetailPostViewModel {
                 self.failedDetailPost("존재하지 않는 포스트입니다.")
                 break
             default:
-                self.failedDetailPost("타임라인 불러오기 실패")
+                self.failedDetailPost("포스트 불러오기 실패")
                 break
             }
                 
@@ -47,12 +53,37 @@ class DetailPostViewModel {
     }
     }
     
+    func deletePost(id : String) {
+        
+        let dto = NetworkDTO()
+        let header = dto.getDataHeader()
+        
+        AF.request(dto.getDetailPostURL(id: id), method: .delete, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            
+            switch response.response?.statusCode {
+            case 200:
+                self.successDeletePost()
+                break
+            default:
+                self.failedDeletePost("포스트 삭제 실패")
+                break
+            }
+    }
+    }
+    
     func successDetailPost(_ data : DetailPostModel) {
-        self.delegate?.successEvent(data)
+        self.detailDelegate?.successEvent(data)
     }
     
     func failedDetailPost(_ error: String) {
-        self.delegate?.failedEvent(error)
+        self.detailDelegate?.failedEvent(error)
     }
     
+    func successDeletePost() {
+        self.deleteDelegate?.successEvent()
+    }
+    
+    func failedDeletePost(_ error: String) {
+        self.deleteDelegate?.failedEvent(error)
+    }
 }
