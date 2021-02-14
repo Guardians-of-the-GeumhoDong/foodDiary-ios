@@ -34,6 +34,7 @@ class TimelineViewModel {
                 let model = try JSONDecoder().decode([TimelineModel].self, from: json)
                 self.postsData = model
                 self.successLoadTimeline()
+                break
             default:
                 self.failedLoadTimeline("타임라인 불러오기 실패")
                 break

@@ -57,4 +57,8 @@ class NetworkDTO {
         return String("\(self.imageBaseURL)\(url)")
     }
     
+    func getDetailPostURL(id : String) -> String {
+        return String("\(self.baseURL)\(self.postURL)/\(id)")
+    }
+    
 }

@@ -29,4 +29,7 @@ class TimelineTableViewCell: UITableViewCell {
         self.postId = data.id
     }
     
+    
+    
+    
 }

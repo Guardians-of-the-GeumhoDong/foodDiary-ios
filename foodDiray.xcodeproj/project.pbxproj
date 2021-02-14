@@ -25,6 +25,9 @@
 		8289A8BA25BFFEB000F9BA0A /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8289A8B925BFFEB000F9BA0A /* MyViewController.swift */; };
 		828A5A5F25CA8030004CD9F0 /* CreatePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */; };
 		828A5A6425CA87B3004CD9F0 /* CreatePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */; };
+		8294395425D68DB4003DF5C9 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294395325D68DB4003DF5C9 /* DetailPostViewController.swift */; };
+		8294395825D69312003DF5C9 /* DetailPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294395725D69312003DF5C9 /* DetailPostViewModel.swift */; };
+		8299382525D8D01900D0BADF /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8299382425D8D01900D0BADF /* DetailPostModel.swift */; };
 		82B66E6E25B05F40004A47F9 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */; };
 		82CEB63825A30735000FF524 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CEB63725A30735000FF524 /* LoginModel.swift */; };
 		82F4EE1C25AD8A3400EB1C00 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4EE1B25AD8A3400EB1C00 /* TimelineViewController.swift */; };
@@ -51,6 +54,9 @@
 		8289A8B925BFFEB000F9BA0A /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewModel.swift; sourceTree = "<group>"; };
 		828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostModel.swift; sourceTree = "<group>"; };
+		8294395325D68DB4003DF5C9 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		8294395725D69312003DF5C9 /* DetailPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewModel.swift; sourceTree = "<group>"; };
+		8299382425D8D01900D0BADF /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
 		82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		82CEB63725A30735000FF524 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		82F4EE1B25AD8A3400EB1C00 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +147,9 @@
 				82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */,
 				828A5A5E25CA8030004CD9F0 /* CreatePostViewModel.swift */,
 				828A5A6325CA87B3004CD9F0 /* CreatePostModel.swift */,
+				8294395325D68DB4003DF5C9 /* DetailPostViewController.swift */,
+				8294395725D69312003DF5C9 /* DetailPostViewModel.swift */,
+				8299382425D8D01900D0BADF /* DetailPostModel.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -284,7 +293,10 @@
 				82658D9D259DAB69006E341D /* LoginViewModel.swift in Sources */,
 				8237F0E825BEBA9200309119 /* RegisterViewController.swift in Sources */,
 				82CEB63825A30735000FF524 /* LoginModel.swift in Sources */,
+				8294395425D68DB4003DF5C9 /* DetailPostViewController.swift in Sources */,
+				8299382525D8D01900D0BADF /* DetailPostModel.swift in Sources */,
 				822EB11925D3E67A007BA706 /* TimelineViewModel.swift in Sources */,
+				8294395825D69312003DF5C9 /* DetailPostViewModel.swift in Sources */,
 				82B66E6E25B05F40004A47F9 /* CreatePostViewController.swift in Sources */,
 				821F7A3825BEC5390090896E /* RegisterViewModel.swift in Sources */,
 				8215805025AD8BB6005CB92B /* TimelineTableViewCell.swift in Sources */,
