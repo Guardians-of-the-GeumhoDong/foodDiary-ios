@@ -23,7 +23,7 @@ class CreatePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+    
         let gesture = UITapGestureRecognizer(target: self, action: #selector(showPhotoAlert))
         photoImage.addGestureRecognizer(gesture)
         photoImage.isUserInteractionEnabled = true
@@ -36,7 +36,7 @@ class CreatePostViewController: UIViewController {
         
         memoTextView.delegate = self
         titleTextView.delegate = self
-    
+        
         vm = CreatePostViewModel()
         vm?.delegate = self
     }

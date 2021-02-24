@@ -28,6 +28,8 @@
 		8294395425D68DB4003DF5C9 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294395325D68DB4003DF5C9 /* DetailPostViewController.swift */; };
 		8294395825D69312003DF5C9 /* DetailPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8294395725D69312003DF5C9 /* DetailPostViewModel.swift */; };
 		8299382525D8D01900D0BADF /* DetailPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8299382425D8D01900D0BADF /* DetailPostModel.swift */; };
+		82A5172025E66B320083E6D7 /* splash_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 82A5171E25E66B310083E6D7 /* splash_2.mp4 */; };
+		82A5172125E66B320083E6D7 /* splash.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 82A5171F25E66B310083E6D7 /* splash.mp4 */; };
 		82B66E6E25B05F40004A47F9 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */; };
 		82CEB63825A30735000FF524 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82CEB63725A30735000FF524 /* LoginModel.swift */; };
 		82F4EE1C25AD8A3400EB1C00 /* TimelineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F4EE1B25AD8A3400EB1C00 /* TimelineViewController.swift */; };
@@ -57,6 +59,8 @@
 		8294395325D68DB4003DF5C9 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
 		8294395725D69312003DF5C9 /* DetailPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewModel.swift; sourceTree = "<group>"; };
 		8299382425D8D01900D0BADF /* DetailPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostModel.swift; sourceTree = "<group>"; };
+		82A5171E25E66B310083E6D7 /* splash_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash_2.mp4; sourceTree = "<group>"; };
+		82A5171F25E66B310083E6D7 /* splash.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splash.mp4; sourceTree = "<group>"; };
 		82B66E6D25B05F40004A47F9 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		82CEB63725A30735000FF524 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		82F4EE1B25AD8A3400EB1C00 /* TimelineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 		823658F6259C71800008F668 = {
 			isa = PBXGroup;
 			children = (
+				82A5171E25E66B310083E6D7 /* splash_2.mp4 */,
+				82A5171F25E66B310083E6D7 /* splash.mp4 */,
 				82365901259C71800008F668 /* foodDiray */,
 				82365900259C71800008F668 /* Products */,
 				85C6FF2F4552CC0ED1CA6B9D /* Pods */,
@@ -233,6 +239,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82A5172025E66B320083E6D7 /* splash_2.mp4 in Resources */,
+				82A5172125E66B320083E6D7 /* splash.mp4 in Resources */,
 				8236590F259C71810008F668 /* LaunchScreen.storyboard in Resources */,
 				8236590C259C71810008F668 /* Assets.xcassets in Resources */,
 				8236590A259C71800008F668 /* Main.storyboard in Resources */,
@@ -456,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = XJHDNUWBP6;
 				INFOPLIST_FILE = foodDiray/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -479,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = XJHDNUWBP6;
 				INFOPLIST_FILE = foodDiray/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
