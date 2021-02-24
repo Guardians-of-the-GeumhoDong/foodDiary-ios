@@ -1,8 +1,6 @@
 # foodDiary-ios
 음식 일기 프로젝트 - ios
-
-210220 - 서버 이슈로 앱 진행이 불가능합니다. 앱 구동 상황은 youtube를 통해 확인해주시기 바랍니다.
-( https://youtu.be/aElxXSePfSk )
+개발 진행 상황 - https://youtu.be/aElxXSePfSk
 
 
 
